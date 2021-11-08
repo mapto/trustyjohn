@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta property="og:title" content="Fairytale Swipe">
+    <meta property="og:description" content="A swiping card interactive fairy tale">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:url" content="">
+    <title>FairytaleSwipe</title>
+  </head>
+  <body>
+    <div id="page">
+      <header id="balance">
+        <img src="img/balance/religion.png" alt="tradition vs innovation" title="tradition vs innovation">
+        <img src="img/balance/people.png" alt="individual vs collective" title="individual vs collective">
+        <img src="img/balance/war.png" alt="rivality vs solidarity" title="rivality vs solidarity">
+        <img src="img/balance/money.png" alt="generosity vs greed" title="generosity vs greed">
+      </header>
+      <div id="narrative">
+        <p>Once upon a time there was an old king who was so ill that he thought to himself,
+
+"I am lying on what must be my death-bed." Then said he, "Tell Faithful John to come to me." Faithful John are you, and are so called, because you have been so loyal to him for your whole life long.</p>
+        <p class="instructions">Swipe card left or right to continue...</p>
+      </div>
+      <!-- These are only for the wireframe, so that we have an idea how cards should be visualised on swipe -->
+      <!-- 
+      <div class="swipe" id="leftswipeshow">
+        <div class="card">
+          <p class="action">What happens when you swipe left</p>
+        </div>
+      </div>
+      <div class="swipe" id="leftswipeout">
+        <div class="card"> </div>
+      </div>
+      <div class="swipe" id="rightswipeshow">
+        <div class="card">
+          <p class="action">What happens when you swipe right</p>
+        </div>
+      </div>
+      <div class="swipe" id="rightswipeout">
+        <div class="card"> </div>
+      </div>
+      -->
+      <div id="card_behind" class="card">
+      <img src="img/card/newking.png" alt="old king card" title="old king card">
+    </div>
+    <div class="swipe" id="currentswipe">
+        <div class="card">
+          <p class="action left">What happens when you swipe left</p>
+          <p class="action right">What happens when you swipe right</p>
+          <img src="img/card/oldking.png" alt="old king card" title="old king card">
+        </div>
+      </div>
+    </div>
+
+    <script type = "text/javascript" src="js/swipe.js" ></script>
+    <script type = "text/javascript" src="js/narrative.js" ></script>
+    <script type = "text/javascript" src="js/menu.js" ></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/logo.png">
+
+    <footer id="links">
+      <a href="https://www.streamlinehq.com">Free PNG icons by Streamline</a>
+    </footer>
+  </body>
+</html>
