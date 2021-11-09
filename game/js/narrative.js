@@ -16,8 +16,8 @@ events = [{
         "text": '<p>"Most faithful John, I feel my end approaching, and have no anxiety except about my son. He is still of tender age, and cannot always know how to guide himself. If thou dost not promise me to teach him everything that he ought to know, and to be his foster-father, I cannot close my eyes in peace."</p><p class="instructions">Swipe your response...</p>',
         "image": "oldking",
         "type": "kernel", // actually onboarding
-        "left_action": "Okay",
-        "rigth_action": "Got it",
+        "left_action": "Rest assured, my king",
+        "rigth_action": "I hope I can do, mylord",
     },
 ]
 

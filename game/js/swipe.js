@@ -66,11 +66,15 @@ function interpret_swipe(e) {
 }
 
 var card = document.querySelector("#currentswipe .card")
+card.touchstart = start_swipe
+card.touchmove = interpret_swipe
 card.onmousedown = start_swipe
 card.onmousemove = interpret_swipe
 
 // problematic case is when mousedown is on card, but mouseup is out of it
 // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture
+window.ontouchend = reset_swipe
+window.ontouchcancel = reset_swipe
 window.onmouseup = reset_swipe
 window.onmouseclick = reset_swipe
 // window.onmouseclick = do_nothing
