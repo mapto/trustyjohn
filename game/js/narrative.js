@@ -1,4 +1,5 @@
 // TODO will handle content here
+// the narrative data structure is currently parsed in menu.js
 
 // TODO extract and load dynamically from a CSV extracted from https://docs.google.com/spreadsheets/d/1N2TX5G59T9z6tlyIEbXTSZCaHk09DXstBK6leT2r4Mk
 // first row in file is headings (dictionary keys), rows that start with # are separators for easier readibility by writers
