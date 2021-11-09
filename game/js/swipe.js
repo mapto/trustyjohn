@@ -6,7 +6,7 @@ var swipe = {"on": false}
  * @returns false
  */
 function do_nothing() {
-    return false;
+    return false
 }
 
 function reset_swipe() {
@@ -35,11 +35,15 @@ function right_swipe_show(rot) {
 }
 
 function left_swipe_out() {
-    // TODO drop current card, update score load new card
+    console.log("TODO drop current card, update score load new card")
+    load_card(next_left) // variable from narrative.js, TODO better handling by storing it in a hidden HTML tag
+    reset_swipe()
 }
 
 function right_swipe_out() {
-    // TODO drop current card, update score load new card
+    console.log("TODO drop current card, update score load new card")
+    load_card(next_right) // variable from narrative.js, TODO better handling by storing it in a hidden HTML tag
+    reset_swipe()
 }
 
 function start_swipe(e) {
@@ -58,12 +62,25 @@ function interpret_swipe(e) {
 
     // TODO slicker swipe
     // working with global coordinates, because we move the target element
+    if (!swipe.x) {
+        swipe.x = e.x
+    }
     var dir = e.x - swipe.x
     // console.log(dir)
     if (dir < -10) {
-        right_swipe_show(dir / 15)
+        // TODO: swipe out condition depends on leaving page, not length of swipe
+        if (dir < -500) {
+            left_swipe_out()
+        } else {
+            left_swipe_show(dir / 15)
+        }
     } else if (dir > 10) {
-        left_swipe_show(dir / 15)
+        // TODO: swipe out condition depends on leaving page, not length of swipe
+        if (dir > 500) {
+            right_swipe_out()
+        } else {
+            right_swipe_show(dir / 15)
+        }
     }
 }
 

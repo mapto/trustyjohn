@@ -1,23 +1,52 @@
-// TODO will handle content here
-// the narrative data structure is currently parsed in menu.js
+// This is fallback content if story.csv cannot be loaded. This would be the case when running locally
+var events = {
+    '0': {
+        "text": "This is a dummy placeholder because the CSV cannot be loaded without a server",
+        "image": "badend",
+        "left_text": "see how to run a local web server",
+        "left_sequel": '0',
+        "right_text": "nothing to do",
+        "right_sequel": '0'
+    }
+}
 
-// TODO extract and load dynamically from a CSV extracted from https://docs.google.com/spreadsheets/d/1N2TX5G59T9z6tlyIEbXTSZCaHk09DXstBK6leT2r4Mk
-// first row in file is headings (dictionary keys), rows that start with # are separators for easier readibility by writers
-events = [{
-        // text uses single quotes because it could probably contain more double quotes, so less need to escape chars
-        "text": '<p>Once upon a time there was an old king who was so ill that he thought to himself,"I am lying on what must be my death-bed." Then said he, "Tell Faithful John to come to me." Faithful John are you, and are so called, because you have been so loyal to him for your whole life long.</p><p class="instructions">Swipe card left or right to continue...</p>',
-        "image": "oldking",
-        "type": "kernel", // actually onboarding
-        "left_action": "Okay",
-        "right_action": "Got it",
-    },
-    {
-        // text uses single quotes because it could probably contain more double quotes, so less need to escape chars
-        "text": '<p>"Most faithful John, I feel my end approaching, and have no anxiety except about my son. He is still of tender age, and cannot always know how to guide himself. If thou dost not promise me to teach him everything that he ought to know, and to be his foster-father, I cannot close my eyes in peace."</p><p class="instructions">Swipe your response...</p>',
-        "image": "oldking",
-        "type": "kernel", // actually onboarding
-        "left_action": "Rest assured, my king",
-        "rigth_action": "I hope I can do, mylord",
-    },
-]
+Papa.parse("story.csv", {
+	download: true,
+	complete: (results) => {
+        // console.log(results)
+        let header = true
+        for (let row of results.data) {
+            if (header) {
+                header = false
+                continue
+            }
+            if (row[1][0] === "#") {
+                continue
+            }
+            events[row[0]] = {
+                "text": row[1],
+                "image": row[2],
+                "left_text": row[4],
+                "left_sequel": row[5],
+                "right_text": row[6],
+                "right_sequel": row[7]
+            }
+        }
+	}
+})
 
+var next_left = events['0'];
+var next_right = events['0'];
+
+/**
+ * @param {*} card 
+ */
+ function load_card(card) {
+    // console.log(card)
+    document.querySelector("#narrative").innerHTML = card.text
+    document.querySelector("#currentswipe .card img").src = "img/card/" + card.image + ".png"
+    document.querySelector("#currentswipe .card .action.left").innerText = card.left_text
+    document.querySelector("#currentswipe .card .action.right").innerText = card.right_text
+    next_left = events[Number(card.left_sequel)]
+    next_right = events[Number(card.right_sequel)]
+}
