@@ -13,7 +13,7 @@ function reset_swipe() {
     var card = document.querySelector("#currentswipe")
     card.style.transform = "rotate(0deg)"
     card.querySelector(".action").style.display = "none"
-    swipe.on = {"on": false}
+    swipe = {"on": false}
 }
 
 function left_swipe_show(rot) {
@@ -71,13 +71,25 @@ card.touchmove = interpret_swipe
 card.onmousedown = start_swipe
 card.onmousemove = interpret_swipe
 
+var page = document.querySelector("#page")
+
 // problematic case is when mousedown is on card, but mouseup is out of it
 // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture
 window.ontouchend = reset_swipe
 window.ontouchcancel = reset_swipe
 window.onmouseup = reset_swipe
-window.onmouseclick = reset_swipe
+window.onclick = reset_swipe
+// window.onmouseleave = reset_swipe
+// window.onmouseleave = reset_swipe
 // window.onmouseclick = do_nothing
+
+// page.ontouchend = reset_swipe
+// page.ontouchcancel = reset_swipe
+// page.onmouseup = reset_swipe
+// page.onclick = reset_swipe
+// page.onmouseleave = reset_swipe
+
+// document.ondrag = do_nothing
 
 // disable default browser dragging
 window.ondragstart = do_nothing
