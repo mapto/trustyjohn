@@ -12,7 +12,9 @@ function do_nothing() {
 function reset_swipe() {
     var card = document.querySelector("#currentswipe")
     card.style.transform = "rotate(0deg)"
-    card.querySelector(".action").style.display = "none"
+    card.querySelectorAll(".action").forEach(
+        (elt) => {elt.style.display = "none"}
+    );
     swipe = {"on": false}
 }
 
