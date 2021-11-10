@@ -35,15 +35,15 @@ function right_swipe_show(rot) {
 }
 
 function left_swipe_out() {
-    console.log("TODO drop current card, update score load new card")
     load_card(next_left) // variable from narrative.js, TODO better handling by storing it in a hidden HTML tag
     reset_swipe()
+    // TODO score
 }
 
 function right_swipe_out() {
-    console.log("TODO drop current card, update score load new card")
     load_card(next_right) // variable from narrative.js, TODO better handling by storing it in a hidden HTML tag
     reset_swipe()
+    // TODO score
 }
 
 function start_swipe(e) {
@@ -56,11 +56,11 @@ function start_swipe(e) {
 
 function interpret_swipe(e) {
     if (!swipe.on) {
-        // if we are not in the middle of a swipe, mouse movement is irrelevant
+        // if we are not in the middle of a swipe, mouse/touch movement is irrelevant
         return
     }
 
-    // TODO slicker swipe
+    // TODO slicker swipe: make sure that the card below moves exactly with your finger
     // working with global coordinates, because we move the target element
     if (!swipe.x) {
         swipe.x = e.x
@@ -84,6 +84,7 @@ function interpret_swipe(e) {
     }
 }
 
+// TODO handle swipe better, like in https://css-tricks.com/simple-swipe-with-vanilla-javascript/
 var card = document.querySelector("#currentswipe .card")
 card.touchstart = start_swipe
 card.touchmove = interpret_swipe
