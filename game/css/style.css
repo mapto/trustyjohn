@@ -131,6 +131,12 @@ body {
 	position: absolute;
 }
 
+.button {
+	cursor: pointer;
+	border-radius: 20%;
+	background-color: white;
+}
+
 #links {
 	position: absolute;
 	bottom: 0;
