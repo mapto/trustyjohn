@@ -33,7 +33,8 @@ function load_story() {
                 }
                 events[row[0]] = {
                     "text": row[1],
-                    "image": row[2],
+                    "image": row[2], // derived from role
+                    // TODO row[3] includes information about event type
                     "left_text": row[4],
                     "left_sequel_id": row[5],
                     "right_text": row[6],
