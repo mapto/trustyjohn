@@ -6,7 +6,7 @@ Work-in-progress [game design document](https://docs.google.com/document/d/1w1eJ
 
 **You can also see a current version of the [wireframe preview](https://gamej.am/).**
 
-Based on Brothers Grimm's [Trusty John](https://www.grimmstories.com/en/grimm_fairy-tales/faithful_john) fairy tale.
+The first interactive story is based on Brothers Grimm's [Trusty John](https://www.grimmstories.com/en/grimm_fairy-tales/faithful_john) fairy tale.
 
 Team discussions over [GGJ's discord](https://discord.gg/ggj).
 
@@ -14,3 +14,16 @@ One team member and idea are from the EU-funded [Values accross space and time](
 
 Placeholder low-res icons from [SreamlineHQ](https://www.streamlinehq.com).
 
+# Development
+
+Due to the fact that the story is loaded dynamically and browser security, a local server is needed for development. To get it running you need to [install Node.js first](https://nodejs.org/en/download/).
+
+Then to setup the project, go to the project root directory (where this README.md file is) and run
+
+    npm install grunt
+
+Then you're ready to go. Type:
+
+    grunt
+
+And you'll have the game run locally and opened in the browser. Whenever you make changes to the code, the server will update it automatically.

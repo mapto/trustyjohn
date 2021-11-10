@@ -1,0 +1,34 @@
+{
+  "name": "fairytale-swipe",
+  "version": "0.0.1",
+  "description": "A card-swiping interactive story about cultural values, part of the Cultural Heritage Game Jam http://gamej.am",
+  "main": "index.html",
+  "directories": {
+    "lib": "game/lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mapto/trustyjohn.git"
+  },
+  "keywords": [
+    "card-swiping game",
+    "interactive story",
+    "cultural heritage game jam",
+    "Trusty John"
+  ],
+  "author": "mapto, Vaowler, Karen, Silo mat, Laura Francis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mapto/trustyjohn/issues"
+  },
+  "homepage": "http://gamej.am",
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-contrib-connect": "^3.0.0",
+    "grunt-contrib-jshint": "^3.1.1",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}
