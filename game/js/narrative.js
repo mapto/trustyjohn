@@ -33,7 +33,8 @@ function load_story() {
                 }
                 events[row[0]] = {
                     "text": row[1],
-                    "image": row[2],
+                    "image": row[2], // derived from role
+                    // TODO row[3] includes information about event type
                     "left_text": row[4],
                     "left_sequel_id": row[5],
                     "right_text": row[6],
@@ -52,12 +53,15 @@ function load_story() {
  * @param {*} card 
  */
  function load_card(card_id) {
+    // TODO Add the possibility that a satellite event appears before the next kernel (story advancing) event
     console.log("Load card")
     // console.log(events)    
     var card = events[card_id]
     // console.log(card)
     document.querySelector("#narrative").innerHTML = "<p>" + card.text + "</p>"
     document.querySelector("#currentswipe .card img").src = "img/card/" + card.image + ".png"
+    // TODO end and satellite events won't have sequel cards defined
+    // Instead end card would always restart the game and satellite card would keep the sequel unchanged
     document.querySelector("#currentswipe .card .action.left").innerText = card.left_text
     document.querySelector("#currentswipe .card .action.right").innerText = card.right_text
     document.querySelector("#left").value = card.left_sequel_id
