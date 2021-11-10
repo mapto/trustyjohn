@@ -31,14 +31,20 @@ function load_story() {
                 if (row[1][0] === "#") {
                     continue
                 }
+                // TODO add logic that handles left or right, based on different types:
+                // end event leads to 0, satellite event doesn't affect subsequent states
                 events[row[0]] = {
                     "text": row[1],
                     "image": row[2], // derived from role
-                    // TODO row[3] includes information about event type
-                    "left_text": row[4],
-                    "left_sequel_id": row[5],
-                    "right_text": row[6],
-                    "right_sequel_id": row[7]
+                    "type": row[3],
+                    "left" : {
+                        "text": row[4],
+                        "id": row[5]
+                    },
+                    "right": {
+                        "text": row[6],
+                        "id": row[7]
+                    }
                 }
             }
             // console.log(events)
@@ -50,7 +56,7 @@ function load_story() {
 }
 
 /**
- * @param {*} card 
+ * @param {*} card_id
  */
  function load_card(card_id) {
     // TODO Add the possibility that a satellite event appears before the next kernel (story advancing) event
@@ -62,10 +68,10 @@ function load_story() {
     document.querySelector("#currentswipe .card img").src = "img/card/" + card.image + ".png"
     // TODO end and satellite events won't have sequel cards defined
     // Instead end card would always restart the game and satellite card would keep the sequel unchanged
-    document.querySelector("#currentswipe .card .action.left").innerText = card.left_text
-    document.querySelector("#currentswipe .card .action.right").innerText = card.right_text
-    document.querySelector("#left").value = card.left_sequel_id
-    document.querySelector("#right").value = card.right_sequel_id
+    document.querySelector("#currentswipe .card .action.left").innerText = card.left.text
+    document.querySelector("#currentswipe .card .action.right").innerText = card.right.text
+    document.querySelector("#left").value = card.left.id
+    document.querySelector("#right").value = card.right.id
 
     if (document.location.href.endsWith("debug")) {
         document.querySelector("#current").value = card_id
