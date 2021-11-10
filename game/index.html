@@ -4,8 +4,11 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta property="og:title" content="Fairytale Swipe">
     <meta property="og:description" content="A swiping card interactive fairy tale">
-    <meta property="og:image" content="img/logo.png">
-    <meta property="og:url" content="">
+    <meta property="og:image" content="http://gamej.am/img/logo.png">
+    <meta property="og:url" content="http://gamej.am">
+
+    <link rel="shortcut icon" href="img/logo.png">
+
     <title>FairytaleSwipe</title>
   </head>
   <body>
@@ -22,25 +25,6 @@
 "I am lying on what must be my death-bed." Then said he, "Tell Faithful John to come to me." Faithful John are you, and are so called, because you have been so loyal to him for your whole life long.</p>
         <p class="instructions">Swipe card left or right to continue...</p>
       </div>
-      <!-- These are only for the wireframe, so that we have an idea how cards should be visualised on swipe -->
-      <!-- 
-      <div class="swipe" id="leftswipeshow">
-        <div class="card">
-          <p class="action">What happens when you swipe left</p>
-        </div>
-      </div>
-      <div class="swipe" id="leftswipeout">
-        <div class="card"> </div>
-      </div>
-      <div class="swipe" id="rightswipeshow">
-        <div class="card">
-          <p class="action">What happens when you swipe right</p>
-        </div>
-      </div>
-      <div class="swipe" id="rightswipeout">
-        <div class="card"> </div>
-      </div>
-      -->
       <div id="card_behind" class="card">
       <img src="img/card/unknown.png" alt="unknown card" title="unknown card">
     </div>
@@ -53,15 +37,28 @@
       </div>
     </div>
 
+    <div id="debug" style="display: none; position: absolute; width: 100%; top: 0; color: white;">
+      <label for="story">story source:</label>
+      <input id="story" type="text" value="story.csv" />[<a href="https://docs.google.com/spreadsheets/d/1N2TX5G59T9z6tlyIEbXTSZCaHk09DXstBK6leT2r4Mk/edit#gid=0" target="_blank">edit</a>]
+      <br/>
+      <label for="left">left:</label>
+      <input id="left" type="text" value="0" size="3"/>
+      <label for="current">Current:</label>
+      <input id="current" type="text" value="0" size="3"/>
+      <label for="right">right:</label>
+      <input id="right" type="text" value="0" size="3"/>
+      <br/>
+    </div>
+    
     <script type= "text/javascript" src="lib/papaparse.min.js" ></script>
+
+    <link rel="preload" as="fetch" href="story.csv" type="text/csv" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
 
     <script type="text/javascript" src="js/narrative.js" ></script>
     <script type="text/javascript" src="js/swipe.js" ></script>
     <script type="text/javascript" src="js/menu.js" ></script>
-
-    <link rel="preload" as="fetch" href="story.csv" type="text/csv" crossorigin>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/logo.png">
+    <script type="text/javascript" src="js/debug.js" ></script>
 
     <footer id="links">
       <a href="https://www.streamlinehq.com">Free PNG icons by Streamline</a>

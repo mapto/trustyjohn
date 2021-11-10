@@ -34,14 +34,8 @@ function right_swipe_show(rot) {
     card.querySelector(".left.action").style.display = "none"
 }
 
-function left_swipe_out() {
-    load_card(next_left) // variable from narrative.js, TODO better handling by storing it in a hidden HTML tag
-    reset_swipe()
-    // TODO score
-}
-
-function right_swipe_out() {
-    load_card(next_right) // variable from narrative.js, TODO better handling by storing it in a hidden HTML tag
+function swipe_out(side) {
+    load_card(document.querySelector("#" + side).value)
     reset_swipe()
     // TODO score
 }
@@ -70,14 +64,14 @@ function interpret_swipe(e) {
     if (dir < -10) {
         // TODO: swipe out condition depends on leaving page, not length of swipe
         if (dir < -500) {
-            left_swipe_out()
+            swipe_out("left")
         } else {
             left_swipe_show(dir / 15)
         }
     } else if (dir > 10) {
         // TODO: swipe out condition depends on leaving page, not length of swipe
         if (dir > 500) {
-            right_swipe_out()
+            swipe_out("right")
         } else {
             right_swipe_show(dir / 15)
         }

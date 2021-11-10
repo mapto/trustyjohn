@@ -1,52 +1,69 @@
 // This is fallback content if story.csv cannot be loaded. This would be the case when running locally
+// Notice that event ids/keys are strings, not numbers
 var events = {
     '0': {
-        "text": "This is a dummy placeholder because the CSV cannot be loaded without a server",
+        "text": "This is a dummy placeholder for when the CSV cannot be loaded. Try loading the <a href='http://gamej.am'>official version</a>.",
         "image": "badend",
         "left_text": "see how to run a local web server",
-        "left_sequel": '0',
+        "left_sequel_id": '0',
         "right_text": "nothing to do",
-        "right_sequel": '0'
+        "right_sequel_id": '0'
     }
 }
 
-Papa.parse("story.csv", {
-	download: true,
-	complete: (results) => {
-        // console.log(results)
-        let header = true
-        for (let row of results.data) {
-            if (header) {
-                header = false
-                continue
+function load_story() {
+    console.log("Load story")
+    var story = document.querySelector("#story").value
+    console.log(story)
+    Papa.parse(story, {
+        download: true,
+        complete: (results) => {
+            events = {}
+            // console.log(results)
+            let header = true
+            for (let row of results.data) {
+                // ignore csv header
+                if (header) {
+                    header = false
+                    continue
+                }
+                // ignore section titles
+                if (row[1][0] === "#") {
+                    continue
+                }
+                events[row[0]] = {
+                    "text": row[1],
+                    "image": row[2],
+                    "left_text": row[4],
+                    "left_sequel_id": row[5],
+                    "right_text": row[6],
+                    "right_sequel_id": row[7]
+                }
             }
-            if (row[1][0] === "#") {
-                continue
-            }
-            events[row[0]] = {
-                "text": row[1],
-                "image": row[2],
-                "left_text": row[4],
-                "left_sequel": row[5],
-                "right_text": row[6],
-                "right_sequel": row[7]
-            }
-        }
-	}
-})
-
-var next_left = events['0'];
-var next_right = events['0'];
+            // console.log(events)
+            // After the story is downloaded, card is overwritten
+            // TODO: Add nice placeholder to show before that, maybe loader
+            var current = document.querySelector("#current").value
+            load_card(current)                }
+    })    
+}
 
 /**
  * @param {*} card 
  */
- function load_card(card) {
+ function load_card(card_id) {
+    console.log("Load card")
+    // console.log(events)    
+    var card = events[card_id]
     // console.log(card)
-    document.querySelector("#narrative").innerHTML = card.text
+    document.querySelector("#narrative").innerHTML = "<p>" + card.text + "</p>"
     document.querySelector("#currentswipe .card img").src = "img/card/" + card.image + ".png"
     document.querySelector("#currentswipe .card .action.left").innerText = card.left_text
     document.querySelector("#currentswipe .card .action.right").innerText = card.right_text
-    next_left = events[Number(card.left_sequel)]
-    next_right = events[Number(card.right_sequel)]
+    document.querySelector("#left").value = card.left_sequel_id
+    document.querySelector("#right").value = card.right_sequel_id
+
+    if (document.location.href.endsWith("debug")) {
+        document.querySelector("#current").value = card_id
+    }
 }
