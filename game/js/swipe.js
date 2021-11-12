@@ -9,6 +9,15 @@ function do_nothing() {
     return false
 }
 
+/**
+ * from https://css-tricks.com/simple-swipe-with-vanilla-javascript/
+ * @param {*} e event
+ * @returns object that has coordinates
+ */
+function unify(e) {
+    return e.changedTouches ? e.changedTouches[0] : e
+}
+
 function reset_swipe() {
     var card = document.querySelector("#currentswipe")
     card.style.transform = "rotate(0deg)"
@@ -18,20 +27,17 @@ function reset_swipe() {
     swipe = {"on": false}
 }
 
-function left_swipe_show(rot) {
+function swipe_show(rot) {
     var card = document.querySelector("#currentswipe")
     card.style.transform = "rotate(" + rot + "deg)"
     
-    card.querySelector(".left.action").style.display = "inherit"
-    card.querySelector(".right.action").style.display = "none"
-}
-
-function right_swipe_show(rot) {
-    var card = document.querySelector("#currentswipe")
-    card.style.transform = "rotate(" + rot + "deg)"
-
-    card.querySelector(".right.action").style.display = "inherit"
-    card.querySelector(".left.action").style.display = "none"
+    if (rot < 0) {
+        card.querySelector(".left.action").style.display = "inherit"
+        card.querySelector(".right.action").style.display = "none"
+    } else {
+        card.querySelector(".right.action").style.display = "inherit"
+        card.querySelector(".left.action").style.display = "none"
+    }
 }
 
 function swipe_out(side) {
@@ -45,54 +51,58 @@ function start_swipe(e) {
     // https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event
     // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
     // working with global coordinates, because we move the target element
-    swipe = {"on": true, "x": e.x, "y": e.y}
+    swipe = {
+        "on": true,
+        "x": unify(e).clientX
+    }
 }
 
 function interpret_swipe(e) {
     if (!swipe.on) {
         // if we are not in the middle of a swipe, mouse/touch movement is irrelevant
-        return
+        return;
     }
 
     // TODO slicker swipe: make sure that the card below moves exactly with your finger
     // working with global coordinates, because we move the target element
     if (!swipe.x) {
-        swipe.x = e.x
+        swipe.x = unify(e).clientX;
     }
-    var dir = e.x - swipe.x
+    var dir = unify(e).clientX - swipe.x;
     // console.log(dir)
     if (dir < -10) {
         // TODO: swipe out condition depends on leaving page, not length of swipe
         if (dir < -500) {
-            swipe_out("left")
+            swipe_out("left");
         } else {
-            left_swipe_show(dir / 15)
+            swipe_show(dir / 15);
         }
     } else if (dir > 10) {
         // TODO: swipe out condition depends on leaving page, not length of swipe
         if (dir > 500) {
-            swipe_out("right")
+            swipe_out("right");
         } else {
-            right_swipe_show(dir / 15)
+            swipe_show(dir / 15);
         }
     }
 }
 
 // TODO handle swipe better, like in https://css-tricks.com/simple-swipe-with-vanilla-javascript/
-var card = document.querySelector("#currentswipe .card")
-card.touchstart = start_swipe
-card.touchmove = interpret_swipe
-card.onmousedown = start_swipe
-card.onmousemove = interpret_swipe
+var card = document.querySelector("#currentswipe .card");
+card.ontouchstart = start_swipe;
+card.onmousedown = start_swipe;
 
-var page = document.querySelector("#page")
+card.ontouchmove = interpret_swipe;
+card.onmousemove = interpret_swipe;
+
+var page = document.querySelector("#page");
 
 // problematic case is when mousedown is on card, but mouseup is out of it
 // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture
-window.ontouchend = reset_swipe
-window.ontouchcancel = reset_swipe
-window.onmouseup = reset_swipe
-window.onclick = reset_swipe
+window.ontouchend = reset_swipe;
+window.ontouchcancel = reset_swipe;
+window.onmouseup = reset_swipe;
+window.onclick = reset_swipe;
 // window.onmouseleave = reset_swipe
 // window.onmouseleave = reset_swipe
 // window.onmouseclick = do_nothing
@@ -106,6 +116,6 @@ window.onclick = reset_swipe
 // document.ondrag = do_nothing
 
 // disable default browser dragging
-window.ondragstart = do_nothing
-window.ondrop = do_nothing
+window.ondragstart = do_nothing;
+window.ondrop = do_nothing;
 
