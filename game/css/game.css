@@ -5,10 +5,8 @@ body {
 }
 
 #page {
-	/*padding: 20px;*/
-	width: 600px;
-	height: 800px;
-	margin: 0 auto;
+	position: relative;
+	height: 100vh;
 	/*background-color: white;*/
 	overflow: hidden;
 	border: solid 1px white;
@@ -16,9 +14,7 @@ body {
 
 #balance {
 	background-color: white;
-	/*width: 300px;*/
 	width: 100%;
-	/*margin: 00px auto;*/
 	padding: 0px 10px;
 }
 
@@ -40,22 +36,28 @@ body {
 	font-style: italic;
 }
 
-#card_behind {
+#card_behind,
+.swipe {
 	position: absolute;
-	margin: 0 77pt;
-	width: 280pt;
-	height: 350pt;
+	bottom: 10px;
+	left: 50%;
+	width: 70%;
 	overflow: hidden;
-	transform-origin: 50% 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#card_behind {
+	transform: translate(-50%, 0);
 }
 
 .swipe {
-	position: absolute;
-	margin: 0 77pt;
-	width: 280pt;
-	height: 700pt;
-	overflow: hidden;
-	transform-origin: 50% 100%;
+	transform: translate(-50%, 50%);  /* also hardcoded in swipe.js -> rotate() */
+	transform-origin: 0% 200%;
+}
+
+#card_offset {
+	visibility: hidden;
 }
 
 .swipe .card .action {
@@ -64,16 +66,16 @@ body {
 
 .card {
 	background-color: lightgrey;
-	width: 99%;
-	height: 50%;
+	aspect-ratio: 4/5;
 	border-radius: 30pt;
+	margin: 0;
+	padding: 0;
 }
 
 .card img {
 	pointer-events: none;
 	width: 100%;
 	height: 100%;
-	margin: 10pt;
 }
 
 #rightswipeshow,

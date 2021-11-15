@@ -65,11 +65,11 @@ function load_story() {
     var card = events[card_id]
     // console.log(card)
     document.querySelector("#narrative").innerHTML = "<p>" + card.text + "</p>"
-    document.querySelector("#currentswipe .card img").src = "img/card/" + card.image + ".png"
+    document.querySelector("#current_swipe .card img").src = "img/card/" + card.image + ".png"
     // TODO end and satellite events won't have sequel cards defined
     // Instead end card would always restart the game and satellite card would keep the sequel unchanged
-    document.querySelector("#currentswipe .card .action.left").innerText = card.left.text
-    document.querySelector("#currentswipe .card .action.right").innerText = card.right.text
+    document.querySelector("#current_swipe .card .action.left").innerText = card.left.text
+    document.querySelector("#current_swipe .card .action.right").innerText = card.right.text
     document.querySelector("#left").value = card.left.id
     document.querySelector("#right").value = card.right.id
 

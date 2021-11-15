@@ -1,5 +1,5 @@
 var swipe = {"on": false}
-
+var default_transform = "translate(-50%, 50%)"
 
 /**
  * dummy function to disable event handling
@@ -18,9 +18,14 @@ function unify(e) {
     return e.changedTouches ? e.changedTouches[0] : e
 }
 
+function rotate(elt, deg) {
+    // also defined in game.css
+    elt.style.transform = "rotate(" + deg + "deg) " + default_transform
+}
+
 function reset_swipe() {
-    var card = document.querySelector("#currentswipe")
-    card.style.transform = "rotate(0deg)"
+    var card = document.querySelector("#current_swipe")
+    rotate(card, 0)
     card.querySelectorAll(".action").forEach(
         (elt) => {elt.style.display = "none"}
     );
@@ -28,8 +33,8 @@ function reset_swipe() {
 }
 
 function swipe_show(rot) {
-    var card = document.querySelector("#currentswipe")
-    card.style.transform = "rotate(" + rot + "deg)"
+    var card = document.querySelector("#current_swipe")
+    rotate(card, rot)
     
     if (rot < 0) {
         card.querySelector(".left.action").style.display = "inherit"
@@ -88,7 +93,7 @@ function interpret_swipe(e) {
 }
 
 // TODO handle swipe better, like in https://css-tricks.com/simple-swipe-with-vanilla-javascript/
-var card = document.querySelector("#currentswipe .card");
+var card = document.querySelector("#current_swipe .card");
 card.ontouchstart = start_swipe;
 card.onmousedown = start_swipe;
 

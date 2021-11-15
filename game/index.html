@@ -1,75 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta property="og:title" content="Fairytale Swipe">
-    <meta property="og:description" content="A swiping card interactive fairy tale">
-    <meta property="og:image" content="http://gamej.am/img/logo.png">
-    <meta property="og:url" content="http://gamej.am">
 
-    <link rel="shortcut icon" href="img/logo.png">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta property="og:title" content="Fairytale Swipe">
+  <meta property="og:description" content="A swiping card interactive fairy tale">
+  <meta property="og:image" content="http://gamej.am/img/logo.png">
+  <meta property="og:url" content="http://gamej.am">
 
-    <title>FairytaleSwipe</title>
-  </head>
-  <body>
-    <div id="page">
-      <header id="balance">
-        <img src="img/balance/religion.png" alt="tradition vs innovation" title="tradition vs innovation">
-        <img src="img/balance/people.png" alt="individual vs collective" title="individual vs collective">
-        <img src="img/balance/war.png" alt="rivality vs solidarity" title="rivality vs solidarity">
-        <img src="img/balance/money.png" alt="generosity vs greed" title="generosity vs greed">
-      </header>
-      <div id="narrative">
-        <p>Once upon a time there was an old king who was so ill that he thought to himself,
+  <link rel="shortcut icon" href="img/logo.png">
 
-"I am lying on what must be my death-bed." Then said he, "Tell Faithful John to come to me." Faithful John are you, and are so called, because you have been so loyal to him for your whole life long.</p>
-        <p class="instructions">Swipe card left or right to continue...</p>
-      </div>
-      <div id="card_behind" class="card">
+  <title>FairytaleSwipe</title>
+</head>
+
+<body>
+  <div id="page">
+    <header id="balance">
+      <img src="img/balance/religion.png" alt="tradition vs innovation" title="tradition vs innovation">
+      <img src="img/balance/people.png" alt="individual vs collective" title="individual vs collective">
+      <img src="img/balance/war.png" alt="rivality vs solidarity" title="rivality vs solidarity">
+      <img src="img/balance/money.png" alt="generosity vs greed" title="generosity vs greed">
+    </header>
+    <div id="narrative">
+      <p>Once upon a time there was an old king who was so ill that he thought to himself,
+
+        "I am lying on what must be my death-bed." Then said he, "Tell Faithful John to come to me." Faithful John are
+        you, and are so called, because you have been so loyal to him for your whole life long.</p>
+      <p class="instructions">Swipe card left or right to continue...</p>
+    </div>
+    <div id="card_behind" class="card">
       <img src="img/card/unknown.png" alt="unknown card" title="unknown card">
     </div>
-    <div class="swipe" id="currentswipe">
-        <div class="card">
-          <p class="action left">What happens when you swipe left</p>
-          <p class="action right">What happens when you swipe right</p>
-          <img src="img/card/oldking.png" alt="old king card" title="old king card">
-        </div>
+    <div class="swipe" id="current_swipe">
+      <div id="current_card" class="card">
+        <p class="action left">What happens when you swipe left</p>
+        <p class="action right">What happens when you swipe right</p>
+        <img src="img/card/oldking.png" alt="old king card" title="old king card">
+      </div>
+      <div id="card_offset" class="card">
+        <img src="img/card/unknown.png">
       </div>
     </div>
 
     <div id="debug" style="display: none; position: absolute; width: 100%; top: 0; color: white;">
       <label for="story">story source:</label>
-      <input id="story" type="text" value="story.csv" />[<a href="https://docs.google.com/spreadsheets/d/1N2TX5G59T9z6tlyIEbXTSZCaHk09DXstBK6leT2r4Mk/edit#gid=0" target="_blank">edit</a>]
-      <br/>
+      <input id="story" type="text" value="story.csv" />[<a
+        href="https://docs.google.com/spreadsheets/d/1N2TX5G59T9z6tlyIEbXTSZCaHk09DXstBK6leT2r4Mk/edit#gid=0"
+        target="_blank">edit</a>]
+      <br />
       <label for="left">left:</label>
-      <input id="left" type="text" value="0" size="3"/>
+      <input id="left" type="text" value="0" size="3" />
       <label for="current">Current:</label>
-      <input id="current" type="text" value="0" size="3"/>
+      <input id="current" type="text" value="0" size="3" />
       <label for="right">right:</label>
-      <input id="right" type="text" value="0" size="3"/>
-      <br/>
+      <input id="right" type="text" value="0" size="3" />
+      <br />
     </div>
-    
-    <script type= "text/javascript" src="lib/papaparse.min.js" ></script>
+
+    <script type="text/javascript" src="lib/papaparse.min.js"></script>
 
     <link rel="preload" as="fetch" href="story.csv" type="text/csv" crossorigin>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/device.css">
+    <link rel="stylesheet" href="css/game.css">
 
-    <script type="text/javascript" src="js/narrative.js" ></script>
-    <script type="text/javascript" src="js/swipe.js" ></script>
-    <script type="text/javascript" src="js/menu.js" ></script>
-    <script type="text/javascript" src="js/debug.js" ></script>
+    <script type="text/javascript" src="js/narrative.js"></script>
+    <script type="text/javascript" src="js/swipe.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/debug.js"></script>
 
     <footer id="links">
-      <img id="sound_switch" class="button" src="img/btn/sound.png"/><br/>
-      <a href="https://www.vast-project.eu">One team member and the idea are from the EU-funded VAST Project</a><br/>
+      <img id="sound_switch" class="button" src="img/btn/sound.png" /><br />
+      <a href="https://www.vast-project.eu">One team member and the idea are from the EU-funded VAST Project</a><br />
       <a href="https://www.streamlinehq.com">Free PNG icon placeholders by Streamline</a>
     </footer>
 
     <audio loop>
       <source src="audio/medival.mp3" type="audio/mpeg">
       <source src="audio/medival.wav" type="audio/wav">
-    Upgrade your browser to hear the game audio.
+      Upgrade your browser to hear the game audio.
     </audio>
-  </body>
+</body>
+
 </html>
