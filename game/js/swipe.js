@@ -68,6 +68,23 @@ function start_swipe(e) {
     }
 }
 
+function swipe_complete(start_x, end_x) {
+    var page = document.querySelector("#page")
+    var page_x = page.offsetLeft
+    var width = page.offsetWidth
+    var swipe_zone = width / 10
+    if (end_x < start_x) {
+        if (end_x < swipe_zone + page_x) {
+            return true
+        }
+    } else {
+        if (end_x > width - swipe_zone + page_x) {
+            return true
+        }
+    }
+    return false
+}
+
 function interpret_swipe(e) {
     if (!swipe.on) {
         // if we are not in the middle of a swipe, mouse/touch movement is irrelevant
@@ -80,17 +97,14 @@ function interpret_swipe(e) {
         swipe.x = unify(e).clientX;
     }
     var dir = unify(e).clientX - swipe.x;
-    // console.log(dir)
     if (dir < -10) {
-        // TODO: swipe out condition depends on leaving page, not length of swipe
-        if (dir < -500) {
+        if (swipe_complete(swipe.x, unify(e).clientX)) {
             swipe_out("left");
         } else {
             swipe_show(dir / 15);
         }
     } else if (dir > 10) {
-        // TODO: swipe out condition depends on leaving page, not length of swipe
-        if (dir > 500) {
+        if (swipe_complete(swipe.x, unify(e).clientX)) {
             swipe_out("right");
         } else {
             swipe_show(dir / 15);
