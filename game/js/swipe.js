@@ -24,6 +24,9 @@ function rotate(elt, deg) {
 }
 
 function reset_swipe() {
+    var sound = document.querySelector("#card_flip")
+    sound.pause()
+
     var card = document.querySelector("#current_swipe")
     rotate(card, 0)
     card.querySelectorAll(".action").forEach(
@@ -52,6 +55,9 @@ function swipe_out(side) {
 }
 
 function start_swipe(e) {
+    var sound = document.querySelector("#card_flip")
+    sound.play()
+
     // API reference:
     // https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event
     // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
