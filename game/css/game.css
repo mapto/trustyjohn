@@ -2,6 +2,7 @@ body {
 	background-color: black;
 	margin: 0;
 	overflow: hidden;
+	user-select: none;
 }
 
 #page {
@@ -15,13 +16,13 @@ body {
 #balance {
 	background-color: white;
 	width: 100%;
-	padding: 0px 10px;
+	padding: 0px 1%;
 }
 
 #balance img {
-	width: 100px;
-	height: 100px;
-	margin: 20px;
+	width: 20%;
+	aspect-ratio: 1/1;
+	margin: 2%;
 }
 
 #narrative {
