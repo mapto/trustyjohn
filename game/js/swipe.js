@@ -24,8 +24,8 @@ function rotate(elt, deg) {
 }
 
 function reset_swipe() {
-    var sound = document.querySelector("#card_flip")
-    sound.pause()
+    document.querySelector("#card_pick").pause()
+    document.querySelector("#card_drop").pause()
 
     var card = document.querySelector("#current_swipe")
     rotate(card, 0)
@@ -49,14 +49,15 @@ function swipe_show(rot) {
 }
 
 function swipe_out(side) {
+    document.querySelector("#card_drop").play()
+
     load_card(document.querySelector("#" + side).value)
     reset_swipe()
     // TODO score
 }
 
 function start_swipe(e) {
-    var sound = document.querySelector("#card_flip")
-    sound.play()
+    document.querySelector("#card_pick").play()
 
     // API reference:
     // https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event
