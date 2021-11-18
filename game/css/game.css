@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
+	font-family: 'Cinzel', serif;
 	background-color: black;
 	margin: 0;
 	overflow: hidden;
@@ -26,21 +29,27 @@ body {
 }
 
 #narrative {
+	font-family: 'Playfair Display', serif;
 	padding: 10pt 50pt;
 	margin: 0 auto;
 	background-color: black;
 	color: white;
 }
 
+quote {
+	font-style: italic;
+}
+
 .instructions {
 	text-align: right;
-	font-style: italic;
+	font-weight: bold;
+	font-family: 'Cinzel', serif;
 }
 
 #card_behind,
 .swipe {
 	position: absolute;
-	bottom: 10px;
+	bottom: 7%;
 	left: 50%;
 	width: 70%;
 	overflow: hidden;
@@ -133,15 +142,21 @@ body {
     width: 50%;
 	color: white;
 	position: absolute;
+	font-weight: bold;
+	font-family: 'Cinzel', serif;
 }
 
 .button {
 	cursor: pointer;
 	border-radius: 20%;
 	background-color: white;
+	float: right;
 }
 
 #links {
+	width: 100%;
+	font-size: small;
+	background-color: white;
 	position: absolute;
 	bottom: 0;
 }

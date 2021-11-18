@@ -66,6 +66,15 @@ function load_story() {
     // console.log(events)    
     var card = events[card_id]
     // console.log(card)
+
+    if (card.text.length > 250) {
+        document.querySelector("#narrative").style.fontSize = "inherit"    
+    } else if (card.text.length > 150) {
+        document.querySelector("#narrative").style.fontSize = "large"    
+    } else {
+        document.querySelector("#narrative").style.fontSize = "x-large"    
+    }
+
     document.querySelector("#narrative").innerHTML = "<p>" + card.text + "</p>"
     document.querySelector("#current_swipe .card img").src = "img/card/" + card.image + ".png"
     // TODO end and satellite events won't have sequel cards defined
