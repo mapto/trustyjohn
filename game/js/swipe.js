@@ -39,11 +39,14 @@ function swipe_show(rot) {
     var card = document.querySelector("#current_swipe")
     rotate(card, rot)
     
-    if (rot < 0) {
+    if (rot < -5) {
         card.querySelector(".left.action").style.display = "inherit"
         card.querySelector(".right.action").style.display = "none"
-    } else {
+    } else if (rot > 5) {
         card.querySelector(".right.action").style.display = "inherit"
+        card.querySelector(".left.action").style.display = "none"
+    } else {
+        card.querySelector(".right.action").style.display = "none"
         card.querySelector(".left.action").style.display = "none"
     }
 }
@@ -67,6 +70,22 @@ function start_swipe(e) {
         "on": true,
         "x": unify(e).clientX
     }
+}
+
+function swipe_done(e) {
+    if (!swipe.on) {
+        // if we are not in the middle of a swipe, mouse/touch movement is irrelevant
+        return;
+    }
+
+    var rot = (unify(e).clientX - swipe.x)/20;
+    if (rot < -5) {
+        swipe_out("left");
+    } else if (rot > 5) {
+        swipe_out("right");
+    }
+
+    reset_swipe()
 }
 
 function swipe_complete(start_x, end_x) {
@@ -97,20 +116,8 @@ function interpret_swipe(e) {
     if (!swipe.x) {
         swipe.x = unify(e).clientX;
     }
-    var dir = unify(e).clientX - swipe.x;
-    if (dir < -10) {
-        if (swipe_complete(swipe.x, unify(e).clientX)) {
-            swipe_out("left");
-        } else {
-            swipe_show(dir / 15);
-        }
-    } else if (dir > 10) {
-        if (swipe_complete(swipe.x, unify(e).clientX)) {
-            swipe_out("right");
-        } else {
-            swipe_show(dir / 15);
-        }
-    }
+    var rot = (unify(e).clientX - swipe.x)/20;
+    swipe_show(rot)
 }
 
 // TODO handle swipe better, like in https://css-tricks.com/simple-swipe-with-vanilla-javascript/
@@ -125,10 +132,11 @@ var page = document.querySelector("#page");
 
 // problematic case is when mousedown is on card, but mouseup is out of it
 // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture
-window.ontouchend = reset_swipe;
-window.ontouchcancel = reset_swipe;
-window.onmouseup = reset_swipe;
-window.onclick = reset_swipe;
+window.ontouchend = swipe_done;
+window.onmouseup = swipe_done;
+
+// window.ontouchcancel = reset_swipe;
+// window.onclick = reset_swipe;
 // window.onmouseleave = reset_swipe
 // window.onmouseleave = reset_swipe
 // window.onmouseclick = do_nothing
