@@ -39,11 +39,13 @@ function load_story() {
                     "type": row[3],
                     "left" : {
                         "text": row[4],
-                        "id": row[5]
+                        "id": row[5],
+                        "values": row[6]
                     },
                     "right": {
-                        "text": row[6],
-                        "id": row[7]
+                        "text": row[7],
+                        "id": row[8],
+                        "values": row[9]
                     }
                 }
             }
