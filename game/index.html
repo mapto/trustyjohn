@@ -17,10 +17,10 @@
 <body>
   <div id="page">
     <header id="balance">
-      <img src="img/balance/religion.png" alt="tradition vs innovation" title="tradition vs innovation">
-      <img src="img/balance/people.png" alt="individual vs collective" title="individual vs collective">
-      <img src="img/balance/war.png" alt="rivality vs solidarity" title="rivality vs solidarity">
-      <img src="img/balance/money.png" alt="generosity vs greed" title="generosity vs greed">
+      <img id="religion" src="img/balance/religion.png" alt="tradition vs innovation" title="tradition vs innovation">
+      <img id="people" src="img/balance/people.png" alt="individual vs collective" title="individual vs collective">
+      <img id="war" src="img/balance/war.png" alt="rivality vs solidarity" title="rivality vs solidarity">
+      <img id="money" src="img/balance/money.png" alt="generosity vs greed" title="generosity vs greed">
     </header>
     <div id="narrative">
       <p>Once upon a time there was an old king who was so ill that he thought to himself,
@@ -49,12 +49,14 @@
         href="https://docs.google.com/spreadsheets/d/1N2TX5G59T9z6tlyIEbXTSZCaHk09DXstBK6leT2r4Mk/edit#gid=0"
         target="_blank">edit</a>]
       <br />
-      <label for="left">left:</label>
-      <input id="left" type="text" value="0" size="3" />
+      <label for="left_card">left:</label>
+      <input id="left_card" type="text" value="0" size="3" class="nav" />
+      <input id="left_keywords" type="hidden" value="0" />
       <label for="current">Current:</label>
-      <input id="current" type="text" value="0" size="3" />
-      <label for="right">right:</label>
-      <input id="right" type="text" value="0" size="3" />
+      <input id="current" type="text" value="0" size="3" class="nav"/>
+      <label for="right_card">right:</label>
+      <input id="right_card" type="text" value="0" size="3" class="nav" />
+      <input id="right_keywords" type="hidden" value="0" />
       <br />
     </div>
 
@@ -64,6 +66,7 @@
     <link rel="stylesheet" href="css/device.css">
     <link rel="stylesheet" href="css/game.css">
 
+    <script type="text/javascript" src="js/score.js"></script>
     <script type="text/javascript" src="js/narrative.js"></script>
     <script type="text/javascript" src="js/swipe.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>

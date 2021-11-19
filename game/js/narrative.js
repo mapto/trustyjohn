@@ -1,13 +1,21 @@
+var narrators = ["narrator", "badend", "goodend"]
+
 // This is fallback content if story.csv cannot be loaded. This would be the case when running locally
 // Notice that event ids/keys are strings, not numbers
 var events = {
     '0': {
         "text": "This is a dummy placeholder for when the CSV cannot be loaded. Try loading the <a href='http://gamej.am'>official version</a>.",
         "image": "badend",
-        "left_text": "see how to run a local web server",
-        "left_sequel_id": '0',
-        "right_text": "nothing to do",
-        "right_sequel_id": '0'
+        "left": {
+            "text": "see how to run a local web server",
+            "id": '0',
+            "values": ""
+        },
+        "right": {
+            "text": "nothing to do",
+            "id": '0',
+            "values": ""
+        }
     }
 }
 
@@ -74,17 +82,25 @@ function load_story() {
     } else {
         document.querySelector("#narrative").style.fontSize = "x-large"    
     }
-
+    if (!narrators.includes(card.image)) {
+        card.text = "<quote>" + card.text + "</quote>"
+    }
     document.querySelector("#narrative").innerHTML = "<p>" + card.text + "</p>"
     document.querySelector("#current_swipe .card img").src = "img/card/" + card.image + ".png"
     // TODO end and satellite events won't have sequel cards defined
     // Instead end card would always restart the game and satellite card would keep the sequel unchanged
     document.querySelector("#current_swipe .card .action.left").innerText = card.left.text
     document.querySelector("#current_swipe .card .action.right").innerText = card.right.text
-    document.querySelector("#left").value = card.left.id
-    document.querySelector("#right").value = card.right.id
+    document.querySelector("#left_card").value = card.left.id
+    document.querySelector("#right_card").value = card.right.id
+    document.querySelector("#left_keywords").value = card.left.values
+    document.querySelector("#right_keywords").value = card.right.values
 
     if (document.location.href.endsWith("debug")) {
+        if (card.left.values)
+            document.querySelector("#current_swipe .card .action.left").innerText += " [" + card.left.values + "]"
+        if (card.right.values)
+            document.querySelector("#current_swipe .card .action.right").innerText += " [" + card.right.values + "]"
         document.querySelector("#current").value = card_id
     }
 }

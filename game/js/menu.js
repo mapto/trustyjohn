@@ -26,6 +26,7 @@ function init_sound() {
 function init_game() {
     // TODO sound needs to be proposed in menu and enabled if chosen by player
     init_sound()
+    init_score()
 
     document.querySelector("#music").muted = 
     console.log("Init")

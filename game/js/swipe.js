@@ -54,7 +54,8 @@ function swipe_show(rot) {
 function swipe_out(side) {
     document.querySelector("#card_drop").play()
 
-    load_card(document.querySelector("#" + side).value)
+    update_score(document.querySelector("#" + side + "_keywords").value)
+    load_card(document.querySelector("#" + side + "_card").value)
     reset_swipe()
     // TODO score
 }
