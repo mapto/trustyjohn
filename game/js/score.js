@@ -36,9 +36,9 @@ function init_score() {
 }
 
 function update_score(keywords) {
-    console.log(keywords)
+    // console.log(keywords)
     var tokens = keywords.split(/[, ;]+/)
-    console.log(tokens)
+    // console.log(tokens)
     for (var s of scores) {
         let indicator = document.querySelector('#' + s.id)
         let value = Number(indicator.style.opacity)
@@ -54,8 +54,8 @@ function update_score(keywords) {
             } else if (value <= 0) {
                 load_card(s.empty_card)
             }
-            console.log(s.id)
-            console.log(value)
+            // console.log(s.id)
+            // console.log(value)
         }    
     }
 }
