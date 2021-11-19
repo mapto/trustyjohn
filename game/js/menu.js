@@ -29,7 +29,7 @@ function init_game() {
     init_score()
 
     document.querySelector("#music").muted = 
-    console.log("Init")
+    // console.log("Init")
     load_story()
 }
 
