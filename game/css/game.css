@@ -11,7 +11,6 @@ body {
 #page {
 	position: relative;
 	height: 100vh;
-	/*background-color: white;*/
 	overflow: hidden;
 	border: solid 1px white;
 }
@@ -72,10 +71,6 @@ ins {
 	visibility: hidden;
 }
 
-.swipe .card .action {
-	display: none;
-}
-
 .card {
 	background-color: lightgrey;
 	aspect-ratio: 4/5;
@@ -90,55 +85,18 @@ ins {
 	height: 100%;
 }
 
-#rightswipeshow,
-#leftswipeshow {
-	z-index: 1;
-	opacity: .7;
-}
-
-#rightswipeout .card,
-#leftswipeout .card {
-	background-color: black;
-	border: solid 1px white;	
-	opacity: .5;
-}
-
-#rightswipeshow .card,
-#leftswipeshow .card {
-	background-color: white;
-	border: solid 1px black;
-}
-
-#leftswipeshow {
-	transform: rotate(-10deg);
-}
-
-#leftswipeout {
-	transform: rotate(-45deg);
-}
-
-#rightswipeshow {
-	transform: rotate(10deg);
-}
-
-#rightswipeout {
-	transform: rotate(45deg);
-}
-
-.left.action,
-#leftswipeshow .card .action {
+.left.action {
 	text-align: left;
 	right: 0;
-	position: absolute;
 }
 
-.right.action,
-#rightswipeshow .card .action {
+.right.action {
 	text-align: right;
 	left: 0;
 }
 
 .action {
+	display: none;
 	padding: 10pt 20pt;
 	font-size: larger;
     width: 50%;
