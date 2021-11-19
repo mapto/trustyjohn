@@ -20,9 +20,9 @@ var events = {
 }
 
 function load_story() {
-    console.log("Load story")
+    // console.log("Load story")
     var story = document.querySelector("#story").value
-    console.log(story)
+    // console.log(story)
     Papa.parse(story, {
         download: true,
         complete: (results) => {
@@ -70,7 +70,7 @@ function load_story() {
  */
  function load_card(card_id) {
     // TODO Add the possibility that a satellite event appears before the next kernel (story advancing) event
-    console.log("Load card")
+    // console.log("Load card")
     // console.log(events)    
     var card = events[card_id]
     // console.log(card)
@@ -83,7 +83,7 @@ function load_story() {
         document.querySelector("#narrative").style.fontSize = "x-large"    
     }
     if (!narrators.includes(card.image)) {
-        card.text = "<quote>" + card.text + "</quote>"
+        card.text = "<q>" + card.text + "</q>"
     }
     document.querySelector("#narrative").innerHTML = "<p>" + card.text + "</p>"
     document.querySelector("#current_swipe .card img").src = "img/card/" + card.image + ".png"

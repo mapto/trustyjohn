@@ -36,15 +36,16 @@ body {
 	color: white;
 }
 
-quote {
+q {
 	font-style: italic;
 }
 
-.instructions {
+ins {
 	text-align: right;
 	font-weight: bold;
 	font-style: normal;
 	font-family: 'Cinzel', serif;
+	font-size: initial;
 }
 
 #card_behind,
