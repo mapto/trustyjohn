@@ -22,21 +22,23 @@
       <img id="war" src="img/balance/war.png" alt="rivality vs solidarity" title="rivality vs solidarity">
       <img id="money" src="img/balance/money.png" alt="generosity vs greed" title="generosity vs greed">
     </header>
-    <div id="narrative">
-      <p>Once upon a time there was an old king who was so ill...
-      <ins>Swipe card left or right to continue...</ins></p>
-    </div>
-    <div id="card_behind" class="card">
-      <img src="img/card/unknown.png" alt="unknown card" title="unknown card">
-    </div>
-    <div class="swipe" id="current_swipe">
-      <div id="current_card" class="card">
-        <p class="action left">What happens when you swipe left</p>
-        <p class="action right">What happens when you swipe right</p>
-        <img src="img/card/oldking.png" alt="old king card" title="old king card">
+    <div id="card_space">
+      <div id="narrative">
+        <p>Once upon a time there was an old king who was so ill...
+        <ins>Swipe card left or right to continue...</ins></p>
       </div>
-      <div id="card_offset" class="card">
-        <img src="img/card/unknown.png">
+      <div id="card_behind" class="card">
+        <img src="img/card/unknown.png" alt="unknown card" title="unknown card">
+      </div>
+      <div class="swipe" id="current_swipe">
+        <div id="current_card" class="card">
+          <p class="action left">What happens when you swipe left</p>
+          <p class="action right">What happens when you swipe right</p>
+          <img src="img/card/oldking.png" alt="old king card" title="old king card">
+        </div>
+        <div id="card_offset" class="card">
+          <img src="img/card/unknown.png">
+        </div>
       </div>
     </div>
 
@@ -56,40 +58,41 @@
       <input id="right_keywords" type="hidden" value="0" />
       <br />
     </div>
+  </div>
 
-    <script type="text/javascript" src="lib/papaparse.min.js"></script>
+  <script type="text/javascript" src="lib/papaparse.min.js"></script>
 
-    <link rel="preload" as="fetch" href="story.csv" type="text/csv" crossorigin>
-    <link rel="stylesheet" href="css/device.css">
-    <link rel="stylesheet" href="css/game.css">
+  <link rel="preload" as="fetch" href="story.csv" type="text/csv" crossorigin>
+  <link rel="stylesheet" href="css/device.css">
+  <link rel="stylesheet" href="css/game.css">
 
-    <script type="text/javascript" src="js/score.js"></script>
-    <script type="text/javascript" src="js/narrative.js"></script>
-    <script type="text/javascript" src="js/swipe.js"></script>
-    <script type="text/javascript" src="js/menu.js"></script>
-    <script type="text/javascript" src="js/debug.js"></script>
+  <script type="text/javascript" src="js/score.js"></script>
+  <script type="text/javascript" src="js/narrative.js"></script>
+  <script type="text/javascript" src="js/swipe.js"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+  <script type="text/javascript" src="js/debug.js"></script>
 
-    <footer id="links">
-      <img id="sound_switch" class="button" src="img/btn/sound.png" />
-      <a href="https://www.vast-project.eu">Partially supported by the EU-funded VAST Project</a><br />
-      <a href="https://www.streamlinehq.com">Icon placeholders by Streamline</a>
-    </footer>
+  <footer id="links">
+    <img id="sound_switch" class="button" src="img/btn/sound.png" />
+    <a href="https://www.vast-project.eu">Partially supported by the EU-funded VAST Project</a><br />
+    <a href="https://www.streamlinehq.com">Icon placeholders by Streamline</a>
+  </footer>
 
-    <audio id="music" loop>
-      <source src="audio/medival.mp3" type="audio/mpeg">
-      <source src="audio/medival.wav" type="audio/wav">
-      Upgrade your browser to hear the game audio.
-    </audio>
-    <audio id="card_pick">
-      <source src="audio/cards_short.mp3" type="audio/mpeg">
-      <source src="audio/cards_short.wav" type="audio/wav">
-      Upgrade your browser to hear the game audio.
-    </audio>
-    <audio id="card_drop">
-      <source src="audio/cards.mp3" type="audio/mpeg">
-      <source src="audio/cards.wav" type="audio/wav">
-      Upgrade your browser to hear the game audio.
-    </audio>
+  <audio id="music" loop>
+    <source src="audio/medival.mp3" type="audio/mpeg">
+    <source src="audio/medival.wav" type="audio/wav">
+    Upgrade your browser to hear the game audio.
+  </audio>
+  <audio id="card_pick">
+    <source src="audio/cards_short.mp3" type="audio/mpeg">
+    <source src="audio/cards_short.wav" type="audio/wav">
+    Upgrade your browser to hear the game audio.
+  </audio>
+  <audio id="card_drop">
+    <source src="audio/cards.mp3" type="audio/mpeg">
+    <source src="audio/cards.wav" type="audio/wav">
+    Upgrade your browser to hear the game audio.
+  </audio>
 </body>
 
 </html>

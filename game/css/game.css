@@ -17,27 +17,51 @@ body {
 	position: relative;
 	height: 100%;
 	overflow: hidden;
-	border: solid 1px white;
+	/* border: solid 1px #fbdec0; */
+	/* background-color: #3a2027; */
 }
 
+#card_space {
+	padding: 8px;
+	height: 100%;
+	border-style: solid;
+	border-width: 0 50px;
+	border-image: url('../img/side.png') 0 100;
+}
+
+/* #card_space {
+	border-style: solid;
+    border-image: url(../img/card-side.png) 0 100;
+    height: 100%;
+    border-width: 0 50px;
+} */
+
 #balance {
-	background-color: white;
-	width: 100%;
+	background-color: #60331c;
+	width: calc(100%-10px);
 	padding: 0px 15%;
+	border-style: solid;
+	border-color: #fbdec0;
+	border-width: 5px 5px 0 5px;
 }
 
 #balance img {
 	width: 7%;
 	aspect-ratio: 1/1;
-	margin: 5%;
+	margin: 8%;
 }
 
 #narrative {
 	font-family: 'Playfair Display', serif;
-	padding: 10pt 50pt;
+	padding: 10pt;
 	margin: 0 auto;
-	background-color: black;
-	color: white;
+	background-color: #e9ab6a;
+	color: black;
+	box-shadow: 0 0 0 4px #60331c, 0 0 0 8px #fbdec0;
+	border-color: #fbdec0;
+	border-style: solid;
+	border-width: 5px;
+	/* border-image: url('../img/narrative-side.png') 0 100; */
 }
 
 q {
@@ -80,7 +104,7 @@ ins {
 }
 
 .card {
-	background-color: lightgrey;
+	background-color: #fbdec0;
 	aspect-ratio: 4/5;
 	border-radius: 30pt;
 	margin: 0;
@@ -117,16 +141,24 @@ ins {
 .button {
 	cursor: pointer;
 	border-radius: 20%;
-	background-color: white;
+	/* background-color: white; */
 	float: right;
 }
 
 #links {
 	width: 100%;
 	font-size: small;
-	background-color: white;
+	background-color: #60331c;
 	position: absolute;
 	bottom: 0;
+}
+
+#links a {
+	text-decoration: none;
+	color: white;
+	margin: 0 10pt;
+	height: 100%;
+	vertical-align: middle;
 }
 
 .nav {
