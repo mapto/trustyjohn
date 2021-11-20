@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+html {
+	height: 100%;
+}
+
 body {
 	font-family: 'Cinzel', serif;
 	background-color: black;
 	margin: 0;
 	overflow: hidden;
 	user-select: none;
+	height: 100%
 }
 
 #page {
 	position: relative;
-	height: 100vh;
+	height: 100%;
 	overflow: hidden;
 	border: solid 1px white;
 }
@@ -37,9 +42,11 @@ body {
 
 q {
 	font-style: italic;
+	quotes: none;
 }
 
 ins {
+	display: block;
 	text-align: right;
 	font-weight: bold;
 	font-style: normal;

@@ -82,11 +82,18 @@ function load_story() {
     } else {
         document.querySelector("#narrative").style.fontSize = "x-large"    
     }
+
     if (!narrators.includes(card.image)) {
         card.text = "<q>" + card.text + "</q>"
     }
+
     document.querySelector("#narrative").innerHTML = "<p>" + card.text + "</p>"
-    document.querySelector("#current_swipe .card img").src = "img/card/" + card.image + ".png"
+
+    var card_img = document.querySelector("#current_swipe .card img")
+    card_img.src = "img/card/" + card.image + ".png"
+    card_img.alt = card.image
+    card_img.title = card.image
+
     // TODO end and satellite events won't have sequel cards defined
     // Instead end card would always restart the game and satellite card would keep the sequel unchanged
     document.querySelector("#current_swipe .card .action.left").innerText = card.left.text
