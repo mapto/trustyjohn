@@ -1,19 +1,13 @@
 @media (min-aspect-ratio: 3/4) {
 	#page {
-		/*padding: 20px;*/
 		width: 600px;
 		margin: 0 auto;
-		/*background-color: white;*/
-		overflow: hidden;
 		border: solid 1px white;
 	}
 }
 
 @media (max-aspect-ratio: 3/4) {
 	#page {
-		/*padding: 20px;*/
-		width: 100vw;
-		/*background-color: white;*/
-		overflow: hidden;
+		width: 100%;
 	}
 }
