@@ -4,7 +4,7 @@ A game for the [Cultural Heritage Game Jam](https://itch.io/jam/cultural-heritag
 
 Work-in-progress [game design document](https://docs.google.com/document/d/1w1eJTdvcJKE9bfqIMtB6Bz-RM-k4bFjmksxTEOHXFec) and [story blocks](https://docs.google.com/spreadsheets/d/1N2TX5G59T9z6tlyIEbXTSZCaHk09DXstBK6leT2r4Mk/).
 
-**You can also see a current version of the [wireframe preview](https://gamej.am/).**
+**You can also play a current version of the [wireframe preview](https://gamej.am/) or the [itch.io page](mapto.itch.io/fairytaleswipe).** Alternatively, watch a [walkthrough video](https://vimeo.com/648254108).
 
 The first interactive story is based on Brothers Grimm's [Trusty John](https://www.grimmstories.com/en/grimm_fairy-tales/faithful_john) fairy tale.
 
