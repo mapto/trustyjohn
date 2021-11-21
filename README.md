@@ -27,3 +27,9 @@ Then you're ready to go. Type:
     grunt
 
 And you'll have the game run locally and opened in the browser. Whenever you make changes to the code, the server will update it automatically.
+
+# Team
+
+* mapto - programming and story
+* Vaowler - illustration
+* Silo mat - music
