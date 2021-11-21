@@ -148,7 +148,6 @@ ins {
 #links {
 	width: 100%;
 	font-size: small;
-	background-color: #60331c;
 	position: absolute;
 	bottom: 0;
 }
@@ -156,7 +155,6 @@ ins {
 #links a {
 	text-decoration: none;
 	color: white;
-	margin: 0 10pt;
 	height: 100%;
 	vertical-align: middle;
 }

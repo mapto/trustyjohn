@@ -10,4 +10,14 @@
 	#page {
 		width: 100%;
 	}
+
+	#links {
+		margin: 0 60px;
+	}
+
+	#sound_switch {
+		position: absolute;
+    	right: 120px;
+    	bottom: 0;
+	}
 }

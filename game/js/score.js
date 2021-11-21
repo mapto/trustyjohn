@@ -1,27 +1,27 @@
 var scores = [
     {
-        "id": "religion",
-        "positive": ["tradition"],
-        "negative": ["innovation"],
+        "id": "innovation",
+        "positive": ["innovation"],
+        "negative": ["tradition"],
         "full_card": 85,
         "empty_card": 85
     },
     {
-        "id": "people",
+        "id": "collective",
         "positive": ["collective", "generosity"],
         "negative": ["individual", "greed"],
         "full_card": 85,
         "empty_card": 85
     },
     {
-        "id": "war",
-        "positive": ["competition", "rivlary", "rivality"],
-        "negative": ["solidarity", "cooperation"],
+        "id": "donation",
+        "positive": ["solidarity", "cooperation"],
+        "negative": ["competition", "rivlary", "rivality"],
         "full_card": 85,
         "empty_card": 85
     },
     {
-        "id": "money",
+        "id": "destiny",
         "positive": ["destiny", "fate"],
         "negative": ["activism", "proactive"],
         "full_card": 85,
@@ -30,7 +30,12 @@ var scores = [
 ]
 
 function init_score() {
-    document.querySelectorAll('#balance img').forEach(elt => {
+    scores.forEach(s => {
+        let elt = document.querySelector("#" + s.id)
+        elt.src = "img/balance/" + s.id + ".svg"
+        elt.alt = s.positive[0] + " vs " + s.negative[0]
+        elt.title = elt.alt
+        console.log(elt.title)
         elt.style.opacity = 0.5
     })
 }
