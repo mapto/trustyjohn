@@ -31,5 +31,5 @@ And you'll have the game run locally and opened in the browser. Whenever you mak
 # Team
 
 * [mapto](https://mapto.itch.io) - programming and story
-* Vaowler - illustration
+* [Vaowler](https://www.artstation.com/vaowler) - illustration
 * [Silo mat](https://www.youtube.com/channel/UCD3VGCRXXfEaxqzBhHfrfrA) - music
