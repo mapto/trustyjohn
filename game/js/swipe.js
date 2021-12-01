@@ -39,10 +39,10 @@ function swipe_show(rot) {
     var card = document.querySelector("#current_swipe")
     rotate(card, rot)
     
-    if (rot < -5) {
+    if (rot < -2) {
         card.querySelector(".left.action").style.display = "inherit"
         card.querySelector(".right.action").style.display = "none"
-    } else if (rot > 5) {
+    } else if (rot > 2) {
         card.querySelector(".right.action").style.display = "inherit"
         card.querySelector(".left.action").style.display = "none"
     } else {

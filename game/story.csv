@@ -1,6 +1,6 @@
 id,text,role,type,left_text,left_sequel,left_keywords,right_text,right_sequel,right_keywords
 ,# Onboarding,,,,,,,,
-0,Once upon a time there was an old king who was so ill...<ins>Swipe card left or right to continue...</ins>,narrator,kernel,Could I do something?,200,activism,Is he going to get better?,200,destiny
+0,Once upon a time there was an old king who was so ill...<ins>Swipe card to make a choice...</ins>,narrator,kernel,Could I do something?,200,activism,Is he going to get better?,200,destiny
 200,"I am dying, Trusty John... You have served me so faithfully for all my life<ins>Your decisions influence the scores you see above</ins>",oldking,kernel,What is going to happen to the kingdom,210,collective,Who's going to take care of me now?,210,individual
 210,"I could face my end without a care were it not for my son. He is still too young to decide everything for himself<ins>Keep the scores balanced, don't let them grow or dwindle</ins>",oldking,kernel,He shall be our new King,1,destiny,He's a troublemaker,1,activism
 1,"Unless you promise me to instruct him in all he should know, and to be to him as a father, I shall not close my eyes in peace<ins>Swipe right to continue...</ins>",oldking,kernel,Uhmmm,2,innovation,"As you say, mylord",3,tradition
@@ -76,10 +76,10 @@ id,text,role,type,left_text,left_sequel,left_keywords,right_text,right_sequel,ri
 70,Ah! how ill have I rewarded such great fidelity! Lift him and put him in my bedroom near my bed,newking,kernel,,71,,,71,
 71,"Oh! if I could only restore you to life, my most trusty John!",newking,kernel,,36,,,36,
 36,"After a time the Queen gave birth to twins, two small sons, who throve and grew, and were a constant joy to her. One day when the Queen was at church, and the two children sat and played with their father, he gazed again full of grief on the stone statue",narrator,kernel,,72,,,72,
-72,"Oh, if I could only restore you to life, my most trusty John!",newking,kernel,"If you cut off with your own hand the heads of your two children, and smear me with their blood, I shall come back to life",75,,"Yes, you can restore me to life again if you are prepared to sacrifice what you hold most dear",73,
-73,All I have in the world will I give up for your sake,newking,kernel,It is the blood of your children taken by your own hand that needs to be smeared on me,75,,"If you cut off with your own hand the heads of your two children, and smear me with their blood",75,
+72,"Oh, if I could only restore you to life, my most trusty John!",newking,kernel,"If you cut off with your own hand the heads of your two children, and smear me with their blood, I shall come back to life",75,individual,"Yes, you can restore me to life again if you are prepared to sacrifice what you hold most dear",73,
+73,All I have in the world will I give up for your sake,newking,kernel,It is the blood of your children taken by your own hand that needs to be smeared on me,75,,"If you cut off with your own hand the heads of your two children, and smear me with their blood",75,individual
 75,"The King was aghast when he heard that he had himself to put his children to death; but when he thought of Trusty John's fidelity, and how he had even died for him, he drew his sword, and with his own hand cut the heads off his children",narrator,kernel,,76,,,76,
-76,"And when he had smeared the stone with their blood, life came back, and Trusty John stood once more safe and sound before him.",narrator,kernel,I mourn the loss of your children,92,,Your loyalty shall be rewarded,77,
+76,"And when he had smeared the stone with their blood, life came back, and Trusty John stood once more safe and sound before him.",narrator,kernel,I mourn the loss of your children,92,solidarity,Your loyalty shall be rewarded,77,generosity
 77,"Taking up the heads of the children, he placed them on their bodies, smeared the wounds with their blood, and in a minute they were all right again and jumping about as if nothing had happened.",newking,kernel,,78,,,78,
 78,"Then the King was full of joy, and when he saw the Queen coming, he hid Trusty John and the two children in a big cupboard.",narrator,kernel,,79,,,79,
 79,"In church my thoughts dwelt constantly on Trusty John, and of what he has suffered for us",princess,kernel,,80,,,80,
@@ -91,7 +91,7 @@ id,text,role,type,left_text,left_sequel,left_keywords,right_text,right_sequel,ri
 85,"And so did Trusty John meet his end - in silence, but faithful to his lord",badend,end,Start again,0,,Start again,0,
 ,,,,,,,,,
 93,"When the queen came back from church, the king asked her ""Did you pray in church?""",newking,kernel,,94,,,94,
-94,"Yes, but my thoughts dwelt constantly on Trusty John, and of what he has suffered for us",princess,,,95,,,95,
+94,"Yes, but my thoughts dwelt constantly on Trusty John, and of what he has suffered for us",princess,kernel,,95,,,95,
 95,"Dear wife, we can restore him to life, but the price asked is our two little sons; we must sacrifice them",newking,kernel,,96,,,96,
 96,"The Queen grew white and her heart sank, but she replied: ""We owe it to him on account of his great fidelity."" and left the room crying",princess,kernel,,97,,,97,
 97,"The King was aghast when he heard that he had himself to put his children to death; but when he thought of Trusty John's fidelity, and how he had even died for him, he drew his sword, and with his own hand cut the heads off his children.",newking,kernel,,98,,,98,

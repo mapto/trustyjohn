@@ -25,7 +25,6 @@ body {
 	padding: 8px;
 	height: 100%;
 	border-style: solid;
-	border-width: 0 50px;
 	border-image: url('../img/side.png') 0 100;
 }
 
@@ -46,9 +45,8 @@ body {
 }
 
 #balance img {
-	width: 7%;
+	width: 9%;
 	aspect-ratio: 1/1;
-	margin: 8%;
 }
 
 #narrative {
@@ -133,8 +131,9 @@ ins {
 	display: none;
 	padding: 10pt 20pt;
 	font-size: larger;
-    width: 50%;
+	width: 50%;
 	color: white;
+	text-shadow: 1px 0 0 black, 0 1px 0 black, -1px 0 0 black, 0 -1px 0 black;
 	position: absolute;
 	font-weight: bold;
 	font-family: 'Cinzel', serif;
