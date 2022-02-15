@@ -33,3 +33,6 @@ And you'll have the game run locally and opened in the browser. Whenever you mak
 * [mapto](https://mapto.itch.io) - programming and story
 * [Vaowler](https://www.artstation.com/vaowler) - illustration
 * [Silo mat](https://www.youtube.com/channel/UCD3VGCRXXfEaxqzBhHfrfrA) - music
+
+# Acknowledgments
+<table><tr><td> <img src="https://ec.europa.eu/research/participants/docs/h2020-funding-guide/imgs/eu-flag.jpg" alt="EU flag" title="EU flag" width="250px"/> </td><td> The initiative for participation in the <a href="https://itch.io/jam/cultural-heritage-game-jam">Cultural Heritage Game Jam</a> and the idea for this game prototype have stemmed from the <a href="https://www.vast-project.eu">VAST project</a> that has received funding from the European Union's <a href="https://ec.europa.eu/programmes/horizon2020">Horizon 2020</a> research and innovation programme under grant agreement No 101004949. This website reflects only the view of the authors and the European Commission is not responsible for any use that may be made of the information it contains. </td></tr></table>
