@@ -148,9 +148,13 @@ ins {
 
 #links {
 	width: 100%;
-	font-size: small;
+	font-size: x-small;
 	position: absolute;
 	bottom: 0;
+	height: 6em;	
+	color: lightgray;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 #links a {
