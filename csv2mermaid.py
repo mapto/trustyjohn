@@ -47,7 +47,7 @@ def clean(s, n=80):
     return result.replace('"',"'")
 
 result = []
-with open('story.csv') as csvfile:
+with open('game/story.csv') as csvfile:
     spamreader = csv.reader(csvfile)
     title = True
     scene = False
@@ -81,5 +81,5 @@ if scene:
     result += ["\tend"]
     scene = False
 result += ["```"]
-with open('story.md', 'w') as mdfile:
-    mdfile.writelines(result)
+with open('game/story.md', 'w') as mdfile:
+    mdfile.writelines("\n".join(result))
